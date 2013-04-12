@@ -132,11 +132,11 @@ vsntprintf (tchar * dest, size_t dest_size, tchar const * fmt,
     ret = STD_NAMESPACE vswprintf (dest, dest_size, fmt, args);
 #  endif
 #else
-#  if defined (DCMTK_LOG4CPLUS_HAVE_VSNPRINTF_S) && defined (_TRUNCATE)
-    ret = vsnprintf_s (dest, dest_size, _TRUNCATE, fmt, args);
-#  elif defined (DCMTK_LOG4CPLUS_HAVE__VSNPRINTF_S) && defined (_TRUNCATE)
-    ret = _vsnprintf_s (dest, dest_size, _TRUNCATE, fmt, args);
-#  elif defined (DCMTK_LOG4CPLUS_HAVE_VSNPRINTF)
+//#  if defined (DCMTK_LOG4CPLUS_HAVE_VSNPRINTF_S) && defined (_TRUNCATE)
+//    ret = vsnprintf_s (dest, dest_size, _TRUNCATE, fmt, args);
+//#  if defined (DCMTK_LOG4CPLUS_HAVE__VSNPRINTF_S) && defined (_TRUNCATE)
+//    ret = _vsnprintf_s (dest, dest_size, _TRUNCATE, fmt, args);
+#  if defined (DCMTK_LOG4CPLUS_HAVE_VSNPRINTF)
     ret = vsnprintf (dest, dest_size, fmt, args);
 #  elif defined (DCMTK_LOG4CPLUS_HAVE__VSNPRINTF)
     ret = _vsnprintf (dest, dest_size, fmt, args);
